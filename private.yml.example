@@ -1,0 +1,6 @@
+
+# private configuration options
+# copy this file to private.yml and customize
+
+# github repository url https://user:password@github.com/repo
+publish_repo: FILL_IN

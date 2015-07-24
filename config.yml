@@ -1,0 +1,21 @@
+
+# set either of these to 0 disable
+checking_timeout_mins: 45
+setup_cron: FALSE
+cron_hour: "*"
+cron_minute: "5" # run once per 60 minutes,  (00:05, 01:05, etc)
+
+# for 4G machine:
+vm_memory: 4096
+bcheck_max_states: 750000
+callocators_max_states: 500000
+
+# for 8G machine
+#vm_memory: 8192
+#bcheck_max_states: 1500000
+#callocators_max_states: 1000000
+
+# for 64G machine
+#vm_memory: 65536
+#bcheck_max_states: 6000000
+#callocators_max_states: 1000000
