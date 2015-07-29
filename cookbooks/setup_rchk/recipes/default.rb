@@ -159,7 +159,7 @@ end
 end
 
 execute "fill in publish repository" do
-  command "sed -i -e 's|___PUBLISH_REPO___|#{publish_repo}|g' /home/#{username}/publish_results.sh"
+  command "sed -i 's|___PUBLISH_REPO___|#{publish_repo}|g' /home/#{username}/publish_results.sh"
   user username
   action :run
   #only_if 'grep -q ___PUBLISH_REPO___ /home/#{username}/publish_results.sh'
