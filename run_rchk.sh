@@ -33,7 +33,7 @@ fi
 # get R-devel source
 
 if [ ! -d R-devel ] ; then
-  svn checkout -q http://svn.r-project.org/R/trunk R-devel || exit 1
+  svn checkout -q https://svn.r-project.org/R/trunk R-devel || exit 1
 fi
 
 cd R-devel || exit 1

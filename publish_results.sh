@@ -73,7 +73,7 @@ Generated on `date` using [rchk](https://github.com/kalibera/rchk).
 [rchk](https://github.com/kalibera/rchk) is a set of offline bug-finding
 tools that look for PROTECT bugs in the C code of GNU-R and R packages. 
 This site presents results from the tool run periodically on recent
-versions of GNU-R ([R-devel](http://svn.r-project.org/R/trunk/)).
+versions of GNU-R ([R-devel](https://svn.r-project.org/R/trunk/)).
 
 The directory structure of the presented results corresponds to where
 binaries and shared libraries are left after building R.  Hence, bug reports
@@ -109,7 +109,7 @@ echo "`date`: Re-initialized presentation repository." >&2
 
 RDEV=$WDIR/R-devel-publish
 if [ ! -d $RDEV ] ; then
-  svn checkout -q http://svn.r-project.org/R/trunk $RDEV || exit 1
+  svn checkout -q https://svn.r-project.org/R/trunk $RDEV || exit 1
 fi
 
 cd $RDEV || exit 1
@@ -238,11 +238,11 @@ ls -1 | sort -n | { PREVV="none" ; while read V ; do
     function print_code_changes {
       if [ `expr $V - $PREVV` -lt 4 ] ; then
         echo "Changes between versions $PREVV and $V:"
-        svn log -r $PREVV:$V http://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
+        svn log -r $PREVV:$V https://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
         echo
       else
         echo "Many changes between versions $PREVV and $V, the last one is:"
-        svn log -r $PREVV http://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
+        svn log -r $PREVV https://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
         echo
       fi    
     }
@@ -303,7 +303,7 @@ ls -1 | sort -n | { PREVV="none" ; while read V ; do
   git add .
   
   # get the commit log from svn
-  svn log -l 1 -r $V http://svn.r-project.org/R/trunk | grep -v '^-*$' | git commit -F - -q
+  svn log -l 1 -r $V https://svn.r-project.org/R/trunk | grep -v '^-*$' | git commit -F - -q
   
   echo "`date`: Committed version $V." >&2
 
