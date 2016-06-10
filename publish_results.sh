@@ -242,7 +242,7 @@ ls -1 | sort -n | { PREVV="none" ; while read V ; do
         echo
       else
         echo "Many changes between versions $PREVV and $V, the last one is:"
-        svn log -r $PREVV https://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
+        svn log -r $V https://svn.r-project.org/R/trunk | sed -e 's/^/  /g'
         echo
       fi    
     }
